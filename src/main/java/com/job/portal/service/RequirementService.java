@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RequirementService {
@@ -23,7 +24,9 @@ public class RequirementService {
     }
 
     public Requirement getRequirement(long id) {
-        return requirementRepository.findById(id).get();
+        Optional<Requirement> requirement = requirementRepository.findById(id);
+        return requirement.orElse(null);
+        
     }
 
     public List<Requirement> getAllRequirements() {
