@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SkillService {
@@ -23,7 +24,8 @@ public class SkillService {
     }
 
     public Skill getSkill(long id) {
-        return skillRepository.findById(id).get();
+        Optional<Skill> skill = skillRepository.findById(id);
+        return skill.orElse(null);
     }
 
     public List<Skill> getAllSkills() {
