@@ -16,8 +16,8 @@ public class Admin {
     @Column(name = "ID")
     private long id;
     @Column(name = "USERNAME")
-    @Size(min = 6, message = "Username must be at least 6 character.")
     @NotNull(message = "Username field cannot be null.")
+    @Size(min = 6, message = "Username must be at least 6 character.")
     private String userName;
     @Column(name = "FIRST_NAME")
     @NotNull(message = "First name field cannot be null.")
